@@ -12,10 +12,12 @@ See [build dependencies](https://github.com/docktermj/KnowledgeBase/blob/master/
 
 ## Build
 
+Use `make help` to see targets.
+
 ### Build all versions
 
 ```console
-packer build template.json
+make
 ```
 
 ### Build specific version
@@ -23,13 +25,13 @@ packer build template.json
 VMware
 
 ```console
-packer build -only=vmware-iso template.json
+make vmware-iso
 ```
 
 VirtualBox
 
 ```console
-packer build -only=virtualbox-iso template.json
+make virtualbox-iso
 ```
 
 ## Run on VMware Workstation
