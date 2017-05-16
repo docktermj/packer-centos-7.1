@@ -23,7 +23,7 @@
 		"shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
 		"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 		"virtualbox_version_file": ".vbox_version",
-		"vm_name": "packer-exemplar-{{user `build_timestamp`}}",
+		"vm_name": "packer-centos-7.1-{{user `build_timestamp`}}",
 		"vboxmanage": [
 			["modifyvm", "{{.Name}}", "--memory", "512"],
 			["modifyvm", "{{.Name}}", "--hwvirtex", "on"],
@@ -49,8 +49,8 @@
 		"ssh_wait_timeout": "10000s",
 		"shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
 		"tools_upload_flavor": "linux",
-		"vm_name": "packer-exemplar-{{user `build_timestamp`}}",
-		"vmdk_name": "packer-exemplar-{{user `build_timestamp`}}",
+		"vm_name": "packer-centos-7.1-{{user `build_timestamp`}}",
+		"vmdk_name": "packer-centos-7.1-{{user `build_timestamp`}}",
 		"vmx_data": {
 			"memsize": "512",
 			"numvcpus": "1",
@@ -90,10 +90,10 @@
 		"keep_input_artifact": true,
 		"override": {
 			"virtualbox": {
-				"output": "packer-exemplar-virtualbox-{{user `build_timestamp`}}.box"
+				"output": "packer-centos-7.1-virtualbox-{{user `build_timestamp`}}.box"
 			},
 			"vmware": {
-				"output": "packer-exemplar-vmware-{{user `build_timestamp`}}.box"
+				"output": "packer-centos-7.1-vmware-{{user `build_timestamp`}}.box"
 			}
 		}
 	}]
