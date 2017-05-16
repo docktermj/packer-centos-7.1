@@ -12,9 +12,10 @@ virtualbox-iso:
 .PHONY: help
 help:
 	@echo "Perform a Packer build"
-	@echo "Make targets:"
+	@echo "Targets:"
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$' | xargs
 
 .PHONY: clean
 clean:
-	echo "clean"
+	rm -rf output-*
+	rm *.box
